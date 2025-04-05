@@ -81,13 +81,9 @@ DataType result = await FileSystem.Instance.LoadAsync<DataType>("FileName.dat");
 　
 ## 포함된 주요 파일
 - `FileSystem.cs`: 데이터의 저장 및 로드 메서드 제공.
-　
 - `FileSystemAESCryptor.cs`: AES-256 암호화 및 복호화 로직 제공.
-　
 - `OpenPersistentDataPath.cs`: Unity Editor에서 데이터 저장 경로를 빠르게 열 수 있는 편의 기능 제공.
-　
 - `Demo.unity`: 사용 예제를 보여주는 데모 씬.
-　
 - `SampleCode.cs`: 사용 예제를 보여주는 샘플 코드.
 
 　
@@ -99,5 +95,5 @@ DataType result = await FileSystem.Instance.LoadAsync<DataType>("FileName.dat");
 　
 　
  　
-🎉 본 파일 관리 시스템을 통해 유니티 게임 개발이 더욱 효율적이고 안전하게 이루어지기를 바랍니다.
+## 🎉 본 파일 관리 시스템을 통해 유니티 게임 개발이 더욱 효율적이고 안전하게 이루어지기를 바랍니다.
 　
