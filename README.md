@@ -19,13 +19,13 @@ JSON형태 변환에 기본 유니티 JSON기능 대신 Newtonsoft Json 라이�
 　	     
 <img src="https://github.com/joylike2/Unity-SaveLoad-FileManager/blob/main/Img_PackageManager.png?raw=true" width="480px">
 
-　
+
 ```none
 com.unity.nuget.newtonsoft-json
 ```
 
-　
-　
+
+
 　
 ## ✅ 주요 기능
 　
@@ -43,6 +43,7 @@ com.unity.nuget.newtonsoft-json
 　
 ### 5. 플랫폼 저장 경로 열기 지원
 - 유니티 에디터 상단 `Tools/FileSystem/Open Persistent Data Path`를 통하여 저장 경로로 바 접근 가능합니다.(단축키 ctrl + alt + . )
+
 　
 　
 　
