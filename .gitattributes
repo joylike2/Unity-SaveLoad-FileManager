@@ -1,0 +1,6 @@
+# 모든 텍스트 파일의 줄바꿈 문자 자동 통일
+* text=auto
+*.cs text eol=lf
+*.meta text eol=lf
+*.shader text eol=lf
+*.md text eol=lf
