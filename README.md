@@ -8,7 +8,6 @@
 　
 　
 ## ⚠️ Newtonsoft Json 필요
-　  
 JSON형태 변환에 기본 유니티 JSON기능 대신 Newtonsoft Json 라이브러리를 사용하였습니다.
 - 이중구조에 대한 문제 해결
 　  
@@ -28,7 +27,6 @@ com.unity.nuget.newtonsoft-json
 
 　
 ## ✅ 주요 기능
-　
 ### 1. JSON 직렬화 및 역직렬화
 - 게임 데이터를 JSON 포맷으로 직렬화하여 저장 및 로드합니다.
 　
@@ -48,7 +46,6 @@ com.unity.nuget.newtonsoft-json
 　
 　
 ## 📌 사용 방법
-　
 ### AES 키 설정 및 해제
 　
 ```csharp
