@@ -95,5 +95,10 @@ DataType result = await FileSystem.Instance.LoadAsync<DataType>("FileName.dat");
 　
 　
  　
-### 🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉
+## 🎉
+This package is licensed under The MIT License (MIT)
+
+Copyright © 2025 joylike2 (https://github.com/joylike2)
+
+See full copyrights in LICENSE.md inside repository
 　
