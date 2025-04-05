@@ -47,7 +47,6 @@ com.unity.nuget.newtonsoft-json
 　
 ## 📌 사용 방법
 ### AES 키 설정 및 해제
-　
 ```csharp
 //AES 키 설정
 FileSystem.Instance.SetAseKey("AESKey");
@@ -61,9 +60,7 @@ bool isAESKey = FileSystem.Instance.IsAseKeySet();
 　
 　
 ### 데이터 저장 및 로드
-　
 #### 동기 방식
-　
 ```csharp
 //저장
 FileSystem.Instance.Save(data, "FileName.dat");
@@ -73,7 +70,6 @@ DataType result = FileSystem.Instance.Load<DataType>("FileName.dat");
 ```
 　
 #### 비동기 방식
-　
 ```csharp
 //저장
 await FileSystem.Instance.SaveAsync(data, "FileName.dat");
@@ -84,7 +80,6 @@ DataType result = await FileSystem.Instance.LoadAsync<DataType>("FileName.dat");
 　
 　
 ## 포함된 주요 파일
-　
 - `FileSystem.cs`: 데이터의 저장 및 로드 메서드 제공.
 　
 - `FileSystemAESCryptor.cs`: AES-256 암호화 및 복호화 로직 제공.
@@ -97,7 +92,6 @@ DataType result = await FileSystem.Instance.LoadAsync<DataType>("FileName.dat");
 　
 　
 ## 지원 환경
-　
 - Unity 엔진 기반 프로젝트
 　
 - Newtonsoft Json 패키지 필요
