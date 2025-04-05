@@ -18,6 +18,7 @@ JSON형태 변환에 기본 유니티 JSON기능 대신 Newtonsoft Json 라이�
 	3. **com.unity.nuget.newtonsoft-json** 입력 후 설치
 　	     
 <img src="https://github.com/joylike2/Unity-SaveLoad-FileManager/blob/main/Img_PackageManager.png?raw=true" width="480px">
+
 　
 ```none
 com.unity.nuget.newtonsoft-json
