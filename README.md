@@ -100,7 +100,7 @@ This package is licensed under The MIT License (MIT)
 
 Copyright © 2025 joylike2 (https://github.com/joylike2)
 
-https://github.com/joylike2/Unity-SaveLoad-FileManage  
+[https://github.com/joylike2/Unity-SaveLoad-FileManage](https://github.com/joylike2/Unity-SaveLoad-FileManager/tree/main)  
 
 
 See full copyrights in LICENSE.md inside repository
