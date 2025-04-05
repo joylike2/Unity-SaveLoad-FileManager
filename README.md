@@ -60,7 +60,7 @@ bool isAESKey = FileSystem.Instance.IsAseKeySet();
 　
 　
 ### 데이터 저장 및 로드
-#### 동기 방식
+#### - 동기 방식
 ```csharp
 //저장
 FileSystem.Instance.Save(data, "FileName.dat");
@@ -69,7 +69,7 @@ FileSystem.Instance.Save(data, "FileName.dat");
 DataType result = FileSystem.Instance.Load<DataType>("FileName.dat");
 ```
 
-#### 비동기 방식
+#### - 비동기 방식
 ```csharp
 //저장
 await FileSystem.Instance.SaveAsync(data, "FileName.dat");
@@ -94,9 +94,8 @@ DataType result = await FileSystem.Instance.LoadAsync<DataType>("FileName.dat");
 　
 ## 지원 환경
 - Unity 엔진 기반 프로젝트
-　
 - Newtonsoft Json 패키지 필요
-　
+
 　
 　
 🎉 본 파일 관리 시스템을 통해 유니티 게임 개발이 더욱 효율적이고 안전하게 이루어지기를 바랍니다.
