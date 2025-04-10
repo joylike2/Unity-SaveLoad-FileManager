@@ -8,7 +8,7 @@
 　
 　
 ## ⚠️ Newtonsoft Json 필요
-JSON형태 변환에 기본 유니티 JSON기능 대신 Newtonsoft Json 라이브러리를 사용하였습니다.
+JSON형태 변환에 기본 유니티 JSON기능 대신 **Newtonsoft Json 라이브러리** 를 사용하였습니다.
 - 이중구조에 대한 문제 해결
 　  
 	Unity Package Manager 를 통해 가져올 수 있습니다.
