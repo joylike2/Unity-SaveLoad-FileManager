@@ -27,7 +27,7 @@ com.unity.nuget.newtonsoft-json
 　
 　
 ## 📌 설치 방법
-　　  
+　  
 	Unity Package Manager 를 통해 가져올 수 있습니다.
 	1. **Package Manager** 열기
 	2. **Install package from URL…** 선택 
