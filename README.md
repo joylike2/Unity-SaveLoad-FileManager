@@ -23,6 +23,22 @@ JSON형태 변환에 기본 유니티 JSON기능 대신 **Newtonsoft Json 라이
 com.unity.nuget.newtonsoft-json
 ```
 
+　
+　
+　
+## 📌 설치 방법
+　　  
+	Unity Package Manager 를 통해 가져올 수 있습니다.
+	1. **Package Manager** 열기
+	2. **Install package by name…** 선택 
+	3. **https://github.com/joylike2/Unity-SaveLoad-FileManager.git** 입력 후 설치
+　	     
+<img src="https://github.com/joylike2/Unity-SaveLoad-FileManager/blob/main/Documentation~/Img_PackageManager.png?raw=true" width="480px">
+
+
+```none
+https://github.com/joylike2/Unity-SaveLoad-FileManager.git
+```
 
 
 　
