@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 using System.Threading.Tasks;
 
 namespace FileManager {
-    internal class OperationResult {
+    public class OperationResult {
         public bool IsSuccess { get; set; }
         public string ErrorMessage { get; set; }
 
@@ -14,7 +14,7 @@ namespace FileManager {
         public static OperationResult Fail(string message) => new OperationResult { IsSuccess = false, ErrorMessage = message };
     }
 
-    internal class OperationResult<T> {
+    public class OperationResult<T> {
         public bool IsSuccess { get; set; }
         public T Result { get; set; }
         public string ErrorMessage { get; set; }
@@ -23,7 +23,7 @@ namespace FileManager {
         public static OperationResult<T> Fail(string message) => new OperationResult<T> { IsSuccess = false, ErrorMessage = message };
     }
 
-    internal class FileSystem {
+    public class FileSystem {
         private static FileSystem _instance;
 
         public static FileSystem Instance {
