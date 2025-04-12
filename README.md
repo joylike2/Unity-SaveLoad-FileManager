@@ -48,17 +48,24 @@ https://github.com/joylike2/Unity-SaveLoad-FileManager.git
 	2. **설치된 FileManager 패키지 메뉴에서 Samples** 선택
 	3. **우측 Import** 선택 설치
 　	     
-<img src="https://github.com/joylike2/Unity-SaveLoad-FileManager/blob/main/Documentation~/Img_PackageManager2.png?raw=true" width="480px">
-　
-- **Asset/Samples 경로** 에서 확인 가능합니다.
-<img src="https://github.com/joylike2/Unity-SaveLoad-FileManager/blob/main/Documentation~/Img_PackageManager3.png?raw=true" width="480px">
-<img src="https://github.com/joylike2/Unity-SaveLoad-FileManager/blob/main/Documentation~/Img_PackageManager4.png?raw=true" width="480px">
 　
 　
 　
 ## 📌 데모 설치 방법
-　　  
+- 순서
+　  
+	Unity Package Manager 를 통해 가져올 수 있습니다.
+	1. **Package Manager** 열기
+	2. **Install package from git URL…** 선택 
+	3. **`https://github.com/joylike2/Unity-SaveLoad-FileManager.git`** 입력 후 설치
+
+<img src="https://github.com/joylike2/Unity-SaveLoad-FileManager/blob/main/Documentation~/Img_PackageManager2.png?raw=true" width="480px">
+
+
+　
 	아래 그림과 같이 설치 후 **Asset/Samples** 폴더에서 확인 할 수 있습니다.
+<img src="https://github.com/joylike2/Unity-SaveLoad-FileManager/blob/main/Documentation~/Img_PackageManager3.png?raw=true" width="480px">
+<img src="https://github.com/joylike2/Unity-SaveLoad-FileManager/blob/main/Documentation~/Img_PackageManager4.png?raw=true" width="480px">
 
 　
 　
