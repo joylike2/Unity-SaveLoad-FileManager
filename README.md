@@ -40,14 +40,7 @@ com.unity.nuget.newtonsoft-json
 ```none
 https://github.com/joylike2/Unity-SaveLoad-FileManager.git
 ```
-　
-- 데모 설치 순서
-　  
-	Unity Package Manager 를 통해 가져올 수 있습니다.
-	1. **Package Manager** 열기
-	2. **설치된 FileManager 패키지 메뉴에서 Samples** 선택
-	3. **우측 Import** 선택 설치
-　	     
+
 　
 　
 　
