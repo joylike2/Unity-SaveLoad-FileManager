@@ -23,7 +23,7 @@
     {
       "displayName": "Demo",
       "description": "Sample scene demonstrating usage of FileManager",
-      "path": "Samples~/Demo"
+      "path": "Samples~"
     }
   ]
 }
