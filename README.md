@@ -86,6 +86,8 @@ https://github.com/joylike2/Unity-SaveLoad-FileManager.git
 ## 📌 사용 방법
 ### AES 키 설정 및 해제
 ```csharp
+using FileManager;
+
 //AES 키 설정
 FileSystem.Instance.SetAseKey("AESKey");
 
