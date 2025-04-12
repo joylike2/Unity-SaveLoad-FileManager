@@ -46,7 +46,7 @@ https://github.com/joylike2/Unity-SaveLoad-FileManager.git
 　
 ## 📌 데모 설치 방법
 　　  
-	아래 그림과 같이 설치 후 **Samples** 폴더에서 확인 할 수 있습니다.
+	아래 그림과 같이 설치 후 **Asset/Samples** 폴더에서 확인 할 수 있습니다.
 
 　
 　
