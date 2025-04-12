@@ -30,7 +30,7 @@ com.unity.nuget.newtonsoft-json
 　　  
 	Unity Package Manager 를 통해 가져올 수 있습니다.
 	1. **Package Manager** 열기
-	2. **Install package by name…** 선택 
+	2. **Install package from URL…** 선택 
 	3. **https://github.com/joylike2/Unity-SaveLoad-FileManager.git** 입력 후 설치
 　	     
 <img src="https://github.com/joylike2/Unity-SaveLoad-FileManager/blob/main/Documentation~/Img_PackageManager.png?raw=true" width="480px">
@@ -40,7 +40,15 @@ com.unity.nuget.newtonsoft-json
 https://github.com/joylike2/Unity-SaveLoad-FileManager.git
 ```
 
+　
+　
+　
+## 📌 데모 설치 방법
+　　  
+	아래 그림과 같이 설치 후 **Samples** 폴더에서 확인 할 수 있습니다.
 
+　
+　
 　
 ## ✅ 주요 기능
 ### 1. JSON 직렬화 및 역직렬화

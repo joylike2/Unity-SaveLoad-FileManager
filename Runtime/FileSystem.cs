@@ -39,7 +39,7 @@ namespace FileManager {
         /// <summary> Application.persistentDataPath </summary>
         private readonly string _folderPath;
 
-        private string _aseKey = "";
+        private string _aesKey = "";
 
         private FileSystem() => _folderPath = Application.persistentDataPath;
 
@@ -56,18 +56,18 @@ namespace FileManager {
 
         #region AES Key Setting
 
-        public void SetAseKey(string providedKey) {
+        public void SetAesKey(string providedKey) {
             if (string.IsNullOrWhiteSpace(providedKey)) {
                 Debug.LogError("AES key cannot be empty!");
                 return;
             }
 
-            _aseKey = providedKey;
+            _aesKey = providedKey;
         }
 
-        public void RemoveAseKey() => _aseKey = "";
+        public void RemoveAesKey() => _aesKey = "";
 
-        public bool IsAseKeySet() => !string.IsNullOrEmpty(_aseKey);
+        public bool IsAesKeySet() => !string.IsNullOrEmpty(_aesKey);
 
         #endregion
 
@@ -83,11 +83,11 @@ namespace FileManager {
                 string finalData = await Task.Run(() => {
                     string serializedData = JsonConvert.SerializeObject(t, Formatting.Indented);
 
-                    if (string.IsNullOrEmpty(_aseKey)) { //AES Key가 설정된 경우 AES암호화. 아니면 Base64만 인코딩
+                    if (string.IsNullOrEmpty(_aesKey)) { //AES Key가 설정된 경우 AES암호화. 아니면 Base64만 인코딩
                         return Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(serializedData));
                     }
                     else {
-                        return FileSystemAESCryptor.Encrypt(serializedData, _aseKey);
+                        return FileSystemAESCryptor.Encrypt(serializedData, _aesKey);
                     }
                 });
 
@@ -107,11 +107,11 @@ namespace FileManager {
                 string serializedData = JsonConvert.SerializeObject(data, Formatting.Indented);
 
                 string finalData;
-                if (string.IsNullOrEmpty(_aseKey)) { //AES Key가 설정된 경우 AES암호화. 아니면 Base64만 인코딩
+                if (string.IsNullOrEmpty(_aesKey)) { //AES Key가 설정된 경우 AES암호화. 아니면 Base64만 인코딩
                     finalData = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(serializedData));
                 }
                 else {
-                    finalData = FileSystemAESCryptor.Encrypt(serializedData, _aseKey);
+                    finalData = FileSystemAESCryptor.Encrypt(serializedData, _aesKey);
                 }
 
                 File.WriteAllText(userFilePath, finalData);
@@ -135,11 +135,11 @@ namespace FileManager {
                     string fileContent = File.ReadAllText(userFilePath);
 
                     string jsonData;
-                    if (string.IsNullOrEmpty(_aseKey)) {
+                    if (string.IsNullOrEmpty(_aesKey)) {
                         jsonData = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(fileContent));
                     }
                     else {
-                        jsonData = FileSystemAESCryptor.Decrypt(fileContent, _aseKey);
+                        jsonData = FileSystemAESCryptor.Decrypt(fileContent, _aesKey);
                     }
 
                     return JsonConvert.DeserializeObject<T>(jsonData);
@@ -161,11 +161,11 @@ namespace FileManager {
                 string fileContent = File.ReadAllText(userFilePath);
 
                 string jsonData;
-                if (string.IsNullOrEmpty(_aseKey)) {
+                if (string.IsNullOrEmpty(_aesKey)) {
                     jsonData = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(fileContent));
                 }
                 else {
-                    jsonData = FileSystemAESCryptor.Decrypt(fileContent, _aseKey);
+                    jsonData = FileSystemAESCryptor.Decrypt(fileContent, _aesKey);
                 }
 
                 T obj = JsonConvert.DeserializeObject<T>(jsonData);

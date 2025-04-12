@@ -8,12 +8,12 @@ namespace FileManager.Demo {
 
         private void Start() {
             if (!string.IsNullOrEmpty(aesKey)) {
-                FileSystem.Instance.SetAseKey(aesKey);
+                FileSystem.Instance.SetAesKey(aesKey);
                 Debug.Log("AES Key Set");
             }
             else {
-                if (FileSystem.Instance.IsAseKeySet()) {
-                    FileSystem.Instance.RemoveAseKey();
+                if (FileSystem.Instance.IsAesKeySet()) {
+                    FileSystem.Instance.RemoveAesKey();
                     Debug.Log("AES Key Removed");
                 }
             }

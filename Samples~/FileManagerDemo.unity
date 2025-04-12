@@ -1299,7 +1299,7 @@ GameObject:
   - component: {fileID: 1989909988}
   - component: {fileID: 1989909987}
   m_Layer: 0
-  m_Name: SampleCode
+  m_Name: SetSampleController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1314,7 +1314,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1989909986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0107176dbfa411da38ab4bd1df0700e, type: 3}
+  m_Script: {fileID: 11500000, guid: 561cf2eeeeca0c0409a35f80a6fd139e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   aesKey: 
