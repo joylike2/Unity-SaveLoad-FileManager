@@ -9,7 +9,8 @@
 　
 ## ⚠️ Newtonsoft Json 필요
 JSON형태 변환에 기본 유니티 JSON기능 대신 **Newtonsoft Json 라이브러리** 를 사용하였습니다.
-- 이중구조에 대한 문제 해결
+- 순서
+　
 	Unity Package Manager 를 통해 가져올 수 있습니다.
 	1. **Package Manager** 열기
 	2. **Install package by name…** 선택 
@@ -26,10 +27,11 @@ com.unity.nuget.newtonsoft-json
 　
 　
 ## 📌 설치 방법
+- 순서
 　  
 	Unity Package Manager 를 통해 가져올 수 있습니다.
 	1. **Package Manager** 열기
-	2. **Install package from URL…** 선택 
+	2. **Install package from git URL…** 선택 
 	3. **https://github.com/joylike2/Unity-SaveLoad-FileManager.git** 입력 후 설치
 　	     
 <img src="https://github.com/joylike2/Unity-SaveLoad-FileManager/blob/main/Documentation~/Img_PackageManager.png?raw=true" width="480px">
