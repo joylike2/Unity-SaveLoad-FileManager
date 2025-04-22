@@ -3,7 +3,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace FileManager {
+namespace LifeLogs.FileSystem.Utils {
     internal static class FileSystemAESCryptor {
         private static byte[] GenerateKey(string userKey) {
             using SHA256 sha256 = SHA256.Create();

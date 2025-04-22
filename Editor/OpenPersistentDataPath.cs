@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEditor;
 using System.IO;
 
-namespace FileManager {
+namespace FileSystem.Editor {
     internal class OpenPersistentDataPath : MonoBehaviour {
         [MenuItem("Tools/FileSystem/Open Persistent Data Path %&.", priority = 1)]   //Ctrl(Cmd) + Alt + .
         internal static void OpenPersistentDataFolder() {

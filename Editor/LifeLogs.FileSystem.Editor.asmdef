@@ -1,5 +1,5 @@
 {
-    "name": "LifeLogs.FileManager.Editor",
+    "name": "LifeLogs.FileSystem.Editor",
     "rootNamespace": "",
     "references": [],
     "includePlatforms": [],

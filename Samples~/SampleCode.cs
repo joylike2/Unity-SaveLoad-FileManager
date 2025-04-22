@@ -1,19 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using LifeLogs.FileSystem;
 
-namespace FileManager.Demo {
+namespace FileSystem.Demo {
     public class SampleCode : MonoBehaviour {
         public string aesKey = "";
 
         private void Start() {
             if (!string.IsNullOrEmpty(aesKey)) {
-                FileSystem.Instance.SetAesKey(aesKey);
+                FileManager.Instance.SetAesKey(aesKey);
                 Debug.Log("AES Key Set");
             }
             else {
-                if (FileSystem.Instance.IsAesKeySet()) {
-                    FileSystem.Instance.RemoveAesKey();
+                if (FileManager.Instance.IsAesKeySet()) {
+                    FileManager.Instance.RemoveAesKey();
                     Debug.Log("AES Key Removed");
                 }
             }
@@ -22,7 +23,7 @@ namespace FileManager.Demo {
         public void SaveSyncCode() {
             List<string> saveData = new List<string> { "A", "B", "C" };
 
-            bool result = FileSystem.Instance.Save(saveData, "TestFile.dat");
+            bool result = FileManager.Instance.Save(saveData, "TestFile.dat");
             if (result) {
                 Debug.Log("Saved!");
             }
@@ -32,7 +33,7 @@ namespace FileManager.Demo {
         }
 
         public void LoadSyncCode() {
-            OperationResult<List<string>> resultData = FileSystem.Instance.Load<List<string>>("TestFile.dat");
+            OperationResult<List<string>> resultData = FileManager.Instance.Load<List<string>>("TestFile.dat");
             if (resultData.IsSuccess) {
                 List<string> result = resultData.Result;
                 Debug.Log("Loaded!: " + result[0] + result[1] + result[2]);
@@ -53,7 +54,7 @@ namespace FileManager.Demo {
         public async Task SaveAsync() {
             List<string> saveData = new List<string> { "A", "B", "C" };
 
-            OperationResult result = await FileSystem.Instance.SaveAsync(saveData, "TestFile.dat");
+            OperationResult result = await FileManager.Instance.SaveAsync(saveData, "TestFile.dat");
             if (result.IsSuccess) {
                 Debug.Log("Saved!");
             }
@@ -71,7 +72,7 @@ namespace FileManager.Demo {
         }
 
         public async Task LoadAsync() {
-            OperationResult<List<string>> resultData = await FileSystem.Instance.LoadAsync<List<string>>("TestFile.dat");
+            OperationResult<List<string>> resultData = await FileManager.Instance.LoadAsync<List<string>>("TestFile.dat");
             if (resultData.IsSuccess) {
                 List<string> result = resultData.Result;
                 Debug.Log("Loaded!: " + result[0] + result[1] + result[2]);

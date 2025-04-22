@@ -5,7 +5,7 @@
   "description": "A lightweight Unity file manager for saving/loading AES-encrypted JSON data, supporting both async and sync operations.",
   "unity": "2021.3",
   "author": {
-    "name": "sky",
+    "name": "joylike2",
     "email": "sky@lifelogs.dev",
     "url": "https://github.com/joylike2"
   },

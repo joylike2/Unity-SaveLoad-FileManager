@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
+using LifeLogs.FileSystem.Utils;
 
-namespace FileManager {
+namespace LifeLogs.FileSystem {
     public class OperationResult {
         public bool IsSuccess { get; set; }
         public string ErrorMessage { get; set; }
@@ -23,13 +24,13 @@ namespace FileManager {
         public static OperationResult<T> Fail(string message) => new OperationResult<T> { IsSuccess = false, ErrorMessage = message };
     }
 
-    public class FileSystem {
-        private static FileSystem _instance;
+    public class FileManager {
+        private static FileManager _instance;
 
-        public static FileSystem Instance {
+        public static FileManager Instance {
             get {
                 if (_instance == null) {
-                    _instance = new FileSystem();
+                    _instance = new FileManager();
                 }
 
                 return _instance;
@@ -41,7 +42,7 @@ namespace FileManager {
 
         private string _aesKey = "";
 
-        private FileSystem() => _folderPath = Application.persistentDataPath;
+        private FileManager() => _folderPath = Application.persistentDataPath;
 
         /// <summary> 경로 검사 </summary>
         private string EnsureDirectoryExists(string fileName) {
