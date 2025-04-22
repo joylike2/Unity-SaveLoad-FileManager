@@ -86,44 +86,48 @@ https://github.com/joylike2/Unity-SaveLoad-FileManager.git
 ## 📌 사용 방법
 ### AES 키 설정 및 해제
 ```csharp
-using FileManager;
+using LifeLogs.FileSystem;
 
 //AES 키 설정
-FileSystem.Instance.SetAseKey("AESKey");
+FileManager.Instance.SetAseKey("AESKey");
 
 //AES 키 해제
-FileSystem.Instance.RemoveAseKey();
+FileManager.Instance.RemoveAseKey();
 
 //AES 설정 확인
-bool isAESKey = FileSystem.Instance.IsAseKeySet();
+bool isAESKey = FileManager.Instance.IsAseKeySet();
 ```
 　
 　
 ### 데이터 저장 및 로드
 #### - 동기 방식
 ```csharp
+using LifeLogs.FileSystem;
+
 //저장
-FileSystem.Instance.Save(data, "FileName.dat");
+FileManager.Instance.Save(data, "FileName.dat");
 
 //로드
-DataType result = FileSystem.Instance.Load<DataType>("FileName.dat");
+DataType result = FileManager.Instance.Load<DataType>("FileName.dat");
 ```
 
 #### - 비동기 방식
 ```csharp
+using LifeLogs.FileSystem;
+
 //저장
-await FileSystem.Instance.SaveAsync(data, "FileName.dat");
+await FileManager.Instance.SaveAsync(data, "FileName.dat");
 　
 //로드
-DataType result = await FileSystem.Instance.LoadAsync<DataType>("FileName.dat");
+DataType result = await FileManager.Instance.LoadAsync<DataType>("FileName.dat");
 ```
 　
 　
 ## 포함된 주요 파일
-- `FileSystem.cs`: 데이터의 저장 및 로드 메서드 제공.
+- `FileManager.cs`: 데이터의 저장 및 로드 메서드 제공.
 - `FileSystemAESCryptor.cs`: AES-256 암호화 및 복호화 로직 제공.
 - `OpenPersistentDataPath.cs`: Unity Editor에서 데이터 저장 경로를 빠르게 열 수 있는 편의 기능 제공.
-- `Demo.unity`: 사용 예제를 보여주는 데모 씬.
+- `FileManagerDemo.unity`: 사용 예제를 보여주는 데모 씬.
 - `SampleCode.cs`: 사용 예제를 보여주는 샘플 코드.
 
 　
