@@ -72,6 +72,19 @@ namespace LifeLogs.FileSystem {
 
         #endregion
 
+        #region FileExists
+
+        public bool IsFileExists(string fileName) {
+            if (string.IsNullOrEmpty(fileName)) {
+                return false;
+            }
+
+            string filePath = Path.Combine(_folderPath, fileName);
+            return File.Exists(filePath);
+        }
+
+        #endregion FileExists
+
         #region Data Load & Save
 
         /// <summary> 비동기 저장 처리 </summary>
