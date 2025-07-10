@@ -1,4 +1,4 @@
-# Unity SaveLoad FileManager (v1.0.0)  
+# Unity SaveLoad FileManager (v1.1.0)  
 　
 　
 ## ✅ 소개  
@@ -98,6 +98,14 @@ FileManager.Instance.RemoveAseKey();
 //AES 설정 확인
 bool isAESKey = FileManager.Instance.IsAseKeySet();
 ```
+　
+　
+### 저장 파일 존재 유무 확인
+```csharp
+using LifeLogs.FileSystem;
+
+bool exists = FileManager.Instance.IsFileExists("myData.json");
+``` 
 　
 　
 ### 데이터 저장 및 로드
