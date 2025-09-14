@@ -117,7 +117,7 @@ using LifeLogs.FileSystem;
 FileManager.Instance.Save(data, "FileName.dat");
 
 //로드
-DataType result = FileManager.Instance.Load<DataType>("FileName.dat");
+DataType result = FileManager.Instance.Load<DataType>("FileName.dat").Result;
 ```
 
 #### - 비동기 방식
