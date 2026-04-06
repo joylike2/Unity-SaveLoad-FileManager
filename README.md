@@ -90,7 +90,7 @@ https://github.com/joylike2/Unity-SaveLoad-FileManager.git
 using LifeLogs.FileSystem;
 
 //AES 키 설정
-FileManager.Instance.SetAseKey("AESKey");
+FileManager.Instance.SetAesKey("AESKey");
 
 //AES 키 해제
 FileManager.Instance.RemoveAseKey();
