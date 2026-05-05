@@ -91,8 +91,11 @@ namespace LifeLogs.FileSystem {
         public async Task<OperationResult> SaveAsync<T>(T t, string fileName) => await JsonSerializeAsync(t, fileName);
 
         private async Task<OperationResult> JsonSerializeAsync<T>(T t, string fileName) {
+            string userFilePath = null;
+            string tempFilePath = null;
             try {
-                string userFilePath = EnsureDirectoryExists(fileName);
+                userFilePath = EnsureDirectoryExists(fileName);
+                tempFilePath = userFilePath + ".tmp";
 
                 string finalData = await Task.Run(() => {
                     string serializedData = JsonConvert.SerializeObject(t, Formatting.Indented);
@@ -105,18 +108,26 @@ namespace LifeLogs.FileSystem {
                     }
                 });
 
-                await File.WriteAllTextAsync(userFilePath, finalData);
+                // 원자적 쓰기: tmp 파일에 먼저 쓴 뒤 원본을 교체. 도중에 종료되어도 원본 보존.
+                if (File.Exists(tempFilePath)) File.Delete(tempFilePath);
+                await File.WriteAllTextAsync(tempFilePath, finalData);
+                File.Move(tempFilePath, userFilePath, true);
                 return OperationResult.Success();
             }
             catch (Exception error) {
+                if (tempFilePath != null && File.Exists(tempFilePath)) {
+                    try { File.Delete(tempFilePath); } catch { /* ignore cleanup error */ }
+                }
                 return OperationResult.Fail(error.Message);
             }
         }
 
         /// <summary> 동기 저장 처리 </summary>
         public bool Save<T>(T data, string fileName) {
+            string tempFilePath = null;
             try {
                 string userFilePath = EnsureDirectoryExists(fileName);
+                tempFilePath = userFilePath + ".tmp";
 
                 string serializedData = JsonConvert.SerializeObject(data, Formatting.Indented);
 
@@ -128,11 +139,17 @@ namespace LifeLogs.FileSystem {
                     finalData = FileSystemAESCryptor.Encrypt(serializedData, _aesKey);
                 }
 
-                File.WriteAllText(userFilePath, finalData);
+                // 원자적 쓰기: tmp 파일에 먼저 쓴 뒤 원본을 교체. 도중에 종료되어도 원본 보존.
+                if (File.Exists(tempFilePath)) File.Delete(tempFilePath);
+                File.WriteAllText(tempFilePath, finalData);
+                File.Move(tempFilePath, userFilePath, true);
 
                 return true;
             }
             catch (Exception) {
+                if (tempFilePath != null && File.Exists(tempFilePath)) {
+                    try { File.Delete(tempFilePath); } catch { /* ignore cleanup error */ }
+                }
                 return false;
             }
         }
