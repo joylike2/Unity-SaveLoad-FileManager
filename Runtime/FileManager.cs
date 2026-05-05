@@ -111,7 +111,12 @@ namespace LifeLogs.FileSystem {
                 // 원자적 쓰기: tmp 파일에 먼저 쓴 뒤 원본을 교체. 도중에 종료되어도 원본 보존.
                 if (File.Exists(tempFilePath)) File.Delete(tempFilePath);
                 await File.WriteAllTextAsync(tempFilePath, finalData);
-                File.Move(tempFilePath, userFilePath, true);
+                if (File.Exists(userFilePath)) {
+                    File.Replace(tempFilePath, userFilePath, null);
+                }
+                else {
+                    File.Move(tempFilePath, userFilePath);
+                }
                 return OperationResult.Success();
             }
             catch (Exception error) {
@@ -142,7 +147,12 @@ namespace LifeLogs.FileSystem {
                 // 원자적 쓰기: tmp 파일에 먼저 쓴 뒤 원본을 교체. 도중에 종료되어도 원본 보존.
                 if (File.Exists(tempFilePath)) File.Delete(tempFilePath);
                 File.WriteAllText(tempFilePath, finalData);
-                File.Move(tempFilePath, userFilePath, true);
+                if (File.Exists(userFilePath)) {
+                    File.Replace(tempFilePath, userFilePath, null);
+                }
+                else {
+                    File.Move(tempFilePath, userFilePath);
+                }
 
                 return true;
             }
