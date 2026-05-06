@@ -95,7 +95,8 @@ namespace LifeLogs.FileSystem {
             string tempFilePath = null;
             try {
                 userFilePath = EnsureDirectoryExists(fileName);
-                tempFilePath = userFilePath + ".tmp";
+                // 동시 저장 호출 시 tmp 충돌 방지를 위해 GUID로 호출별 유니크한 tmp 경로 생성.
+                tempFilePath = userFilePath + "." + Guid.NewGuid().ToString("N") + ".tmp";
 
                 string finalData = await Task.Run(() => {
                     string serializedData = JsonConvert.SerializeObject(t, Formatting.Indented);
@@ -108,8 +109,7 @@ namespace LifeLogs.FileSystem {
                     }
                 });
 
-                // 원자적 쓰기: tmp 파일에 먼저 쓴 뒤 원본을 교체. 도중에 종료되어도 원본 보존.
-                if (File.Exists(tempFilePath)) File.Delete(tempFilePath);
+                // 원자적 쓰기: 유니크 tmp에 먼저 다 쓴 뒤 원본을 교체. 동시 호출 시 마지막 Replace가 이김.
                 await File.WriteAllTextAsync(tempFilePath, finalData);
                 if (File.Exists(userFilePath)) {
                     File.Replace(tempFilePath, userFilePath, null);
@@ -132,7 +132,8 @@ namespace LifeLogs.FileSystem {
             string tempFilePath = null;
             try {
                 string userFilePath = EnsureDirectoryExists(fileName);
-                tempFilePath = userFilePath + ".tmp";
+                // 동시 저장 호출 시 tmp 충돌 방지를 위해 GUID로 호출별 유니크한 tmp 경로 생성.
+                tempFilePath = userFilePath + "." + Guid.NewGuid().ToString("N") + ".tmp";
 
                 string serializedData = JsonConvert.SerializeObject(data, Formatting.Indented);
 
@@ -144,8 +145,7 @@ namespace LifeLogs.FileSystem {
                     finalData = FileSystemAESCryptor.Encrypt(serializedData, _aesKey);
                 }
 
-                // 원자적 쓰기: tmp 파일에 먼저 쓴 뒤 원본을 교체. 도중에 종료되어도 원본 보존.
-                if (File.Exists(tempFilePath)) File.Delete(tempFilePath);
+                // 원자적 쓰기: 유니크 tmp에 먼저 다 쓴 뒤 원본을 교체. 동시 호출 시 마지막 Replace가 이김.
                 File.WriteAllText(tempFilePath, finalData);
                 if (File.Exists(userFilePath)) {
                     File.Replace(tempFilePath, userFilePath, null);
